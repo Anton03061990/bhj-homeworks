@@ -1,6 +1,6 @@
 const cookie = document.getElementById("cookie");
 
-let clicker__counter = document.getElementById("clicker__counter");
+const clicker__counter = document.getElementById("clicker__counter");
 let count = 0;
 
 cookie.onclick = function () {
@@ -12,4 +12,4 @@ cookie.onclick = function () {
   
   count++;
   clicker__counter.textContent = count;
-};
+ };
