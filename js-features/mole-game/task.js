@@ -3,6 +3,8 @@
 const dead = document.getElementById("dead");
 const lost = document.getElementById("lost");
 
+const getHole = index => document.getElementById(`hole${index}`)
+
 for (let i = 0; i < 9; i++) {
     const hole = getHole(i + 1);
 
