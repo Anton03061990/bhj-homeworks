@@ -1,18 +1,28 @@
-const allTips = Array.from(document.querySelectorAll(".has-tooltip"));
+const hasTooltip = document.querySelectorAll('.has-tooltip');
 
-const toolTipsCreate = (item) => {
-  const title = item.title;
-  item.title = "";
-  const objPos = item.getBoundingClientRect();
-  item.insertAdjacentHTML("afterend", `<div class='tooltip'>${title}</div>`);
-  const toolTipEl = item.nextElementSibling;
-  toolTipEl.style.left = objPos.x + "px";
-  toolTipEl.style.top = objPos.y + 20 + "px";
-};
+function setTooltipActive() {
+  const tooltipActive = document.getElementsByClassName('tooltip_active')[0]; 
+  
+  event.preventDefault(); 
+  
+  if (tooltipActive !== undefined) {
+    tooltipActive.classList.remove('tooltip_active');
+     if (tooltipActive.textContent == this.title) {
+      return false;
+    }
+  }
+  
+  const tooltip = document.createElement('div');
+  tooltip.classList.add('tooltip', 'tooltip_active');
+  tooltip.textContent = this.getAttribute('title');
+  const coordinates= this.getBoundingClientRect();
+  tooltip.style.top = coordinates.bottom + 3 + 'px';
+  tooltip.style.left = coordinates.left + 'px';
+  document.body.append(tooltip); 
+}
 
-const toolTipsActive = (e) => {
-  e.target.nextElementSibling.classList.toggle("tooltip_active");
-};
+for (element of hasTooltip) {
+  element.addEventListener('click', setTooltipActive);
+}
 
-allTips.map((item) => toolTipsCreate(item));
-allTips.map((item) => item.addEventListener("click", toolTipsActive));
+
