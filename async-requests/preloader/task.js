@@ -3,7 +3,7 @@ const list = document.getElementById('items');
 
 
 const xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://netology-slow-rest.herokuapp.com/');
+xhr.open('GET', 'https://students.netoservices.ru/nestjs-backend/slow-get-courses');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.addEventListener('readystatechange', show);
 xhr.send();
