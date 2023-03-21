@@ -33,6 +33,7 @@ function addToCart(event) {
 
     const product = event.target.closest('.product');
     const id = product.dataset.id;
+
     const countFromProduct = +event.target.parentNode.querySelector('.product__quantity-value').innerText;
 
     for (let item of cart.children) {
@@ -44,8 +45,8 @@ function addToCart(event) {
 
             return false;
         }
-    }
-
+    } 
+    
     const productImg = product.querySelector('.product__image').src;
     const count = product.querySelector('.product__quantity-value').innerText;
 
