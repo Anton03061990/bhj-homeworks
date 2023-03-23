@@ -11,13 +11,23 @@ console.log(guest);
 const bot = document.getElementById("chat-widget__messages");
 console.log(bot);
 
+let message = "";
+function textMessage(e) {
+ message = e.target.value;
+} 
+
 guest.addEventListener("keydown", function (event) {
+  if (message.trim() === "") {
+    alert("Нельзя отправлять пустое сообщение")
+  }
+  
   if (event.key === "Enter") {
     bot.innerHTML += `<div class="message message_client">
     <div class="message__time">${time}</div>
     <div class="message__text">${guest.value}</div>
 </div>`;
     guest.value = "";
+    
     arrABV(arr);
 
     bot.innerHTML += `
@@ -46,3 +56,4 @@ function arrABV(arr) {
 
 let time = new Date().toLocaleTimeString().slice(0, -3);
 console.log(Date());
+

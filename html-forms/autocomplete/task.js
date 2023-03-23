@@ -77,7 +77,7 @@ class Autocomplete {
       }
     });
     
-    return text All1; 
+    return textAll1;
     
   }
 }
