@@ -11,7 +11,7 @@ function check(event) {
 
     const xhr = new XMLHttpRequest();
     xhr.open('POST', ' https://students.netoservices.ru/nestjs-backend/upload');
-    xhr.onprogress = function (event) {
+    xhr.upload.onprogress = function (event) {
 
         progress.value = event.loaded / 1000000;
     }
